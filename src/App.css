@@ -2,37 +2,178 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  height: 100vh;
+  background-color: #141414 !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar {
+  background-color: #4d0250;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-link {
+  text-decoration: none;
+}
+
+.mowali-brand-logo {
+  height: 50px;
+}
+
+.landing-container {
+  background-color: #141414 !important;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* height: calc(100vh - 75px); */
+
+}
+
+.landing-page-text {
+  color: rgb(202, 202, 202);
+  display: flex;
+  align-items: center;
+}
+
+
+
+.nav-link:hover {
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff !important;
+}
+
+.nav-link {
+  font-family: 'Roboto', sans-serif;
+  color: #b4afb3 !important;
+}
+
+.landing-paragraph {
+  padding: 2rem;
+}
+
+.landing-text-feature-list {
+  list-style-type: none;
+  padding-left: 0;
+  /* Optional: Remove left padding for a cleaner look */
+}
+
+.watch-list-container {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+
+/* Style the color of the slider (the three horizontal lines) */
+.custom-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(110, 83, 113, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Style the slider color when it's in an active (open) state */
+.custom-navbar .navbar-toggler-icon.open {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 255, 0, 0.55)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.welcome-logo-text {
+  height: 30px;
+}
+
+.landing-logo {
+  margin-top: 20px;
+}
+
+.get-started-button {
+  border-radius: 25px !important;
+  margin-bottom: 25px;
+}
+
+.logo-image {
+  padding-top: 20px;
+}
+
+.nav-links {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: #5f046b !important;
+  color: #cfcfcf !important;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 5px;
+}
+
+.nav-links:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  background-color: #9108a3 !important;
+}
+
+.movie-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.movie-card {
+  margin: 10px;
+}
+
+.add-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-movie-button {
+  background-color: #771c7a !important;
+  border: none !important;
+}
+
+.search-movie-button:hover {
+  background-color: #902194 !important;
+  border: none !important;
+}
+
+
+.reset-movie-button {
+  background-color: #4f4250 !important;
+  border: none !important;
+}
+
+.reset-movie-button:hover {
+  background-color: #866f88 !important;
+  border: none !important;
+}
+
+.search-movie-text {
+  height: 35px;
+  color: white;
+  margin-top: 2px;
+  background-color: #372c3a !important;
+  width: 300px;
+}
+
+.FaveMovie {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.fav-card {
+  margin: 15px;
+  border: 1px solid white;
+}
+
+.watched-button {
+  margin-right: 10px;
+}
+
+.watched-button-color {
+  margin-right: 10px;
+  background-color: #f5d49d !important;
+  border: none !important;
+}
+
+.watch-button-color {
+  margin-right: 10px;
+
 }
