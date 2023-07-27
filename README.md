@@ -1,6 +1,11 @@
 # Mobuli
 ##Movie Bucket List
 
+
+
+![Mobuli App](https://github.com/hmackowski/FE-FinalProject/blob/main/src/images/screenshot.jpg)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
