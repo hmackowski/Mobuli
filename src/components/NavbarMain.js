@@ -21,6 +21,7 @@ function NavbarMain() {
           <Nav className="text-color ms-auto"> {/* This will be on the right */}
             <Nav.Link className="nav-links" href="/watchlist">Watch List</Nav.Link>
             <Nav.Link className="nav-links" href="/random">Randomizer</Nav.Link>
+            <Nav.Link className="nav-links" href="/test">Test 404</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

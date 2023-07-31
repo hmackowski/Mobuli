@@ -3,7 +3,7 @@ import Logo from "../images/Mobuli-logo-large.png";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import LandingText from "./LandingText";
-import logoNoWords from '../images/Mobuli-logo-large-no-words.png'
+import logoNoWords from '../images/Mobuli-logo-large2.png'
 
 function LandingPage() {
   return (

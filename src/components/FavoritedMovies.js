@@ -2,17 +2,16 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Button, Card, Container } from "react-bootstrap";
 
-function FavoritedMovies() {
+function FavoritedMovies({ faveMovies, setFaveMovies }) {
   const url = "https://64bb395a5e0670a501d6e2f1.mockapi.io/mobuli/userMovies";
 
-  const [faveMovies, setFavMovies] = useState([]);
 
   useEffect(() => {
-    // This will run when the component mounts or whenever faveMovies state changes.
+    // This will run when the component mounts or whenever the faveMovies prop changes.
     async function fetchData() {
       try {
         const response = await axios.get(url);
-        setFavMovies(response.data);
+        setFaveMovies(response.data);
         console.log(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -20,7 +19,7 @@ function FavoritedMovies() {
     }
 
     fetchData();
-  }, [url]);
+  }, [setFaveMovies]);
 
   async function deleteFavorited(favIndex) {
     try {
@@ -28,7 +27,7 @@ function FavoritedMovies() {
       console.log("Movie deleted successfully:", response.data);
 
       // After deletion, update the state to remove the deleted movie from the list
-      setFavMovies((prevFaveMovies) =>
+      setFaveMovies((prevFaveMovies) =>
         prevFaveMovies.filter((movie) => movie.id !== favIndex)
       );
     } catch (error) {
@@ -48,7 +47,7 @@ function FavoritedMovies() {
       await axios.put(`${url}/${movieId}`, movieToUpdate);
 
       // Update the state with the modified movie list
-      setFavMovies([...faveMovies]);
+      setFaveMovies([...faveMovies]);
     } catch (error) {
       console.error("Error updating movie status:", error);
     }
@@ -71,7 +70,11 @@ function FavoritedMovies() {
               </Card.Title>
               <Card.Text className="add-button">
                 <Button
-                  className={favMovie.Watched ? "watched-button-color" : "watch-button-color"}
+                  className={
+                    favMovie.Watched
+                      ? "watched-button-color"
+                      : "watch-button-color"
+                  }
                   onClick={() => toggleWatchedStatus(favMovie.id)}
                   variant={favMovie.Watched ? "warning" : "success"}
                 >

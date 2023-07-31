@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 function LandingText() {
   return (
     <div>
+      <h1>    Hi     </h1>
       <h1 className="landing-text-title">
         Welcome to <img src={logoText} className="welcome-logo-text" />
       </h1>
