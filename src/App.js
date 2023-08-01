@@ -32,7 +32,7 @@ useEffect(() =>{
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/watchlist" element={<WatchList />} />
-            <Route path="/movieProfile/" element={<MovieProfile />} />
+            <Route path="/movieProfile/:key" element={<MovieProfile />} />
             <Route path="/random"  element={<Randomizer />} />
             <Route path="*" element={<PageNotFound />} />            
           </Routes>

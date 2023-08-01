@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Button } from "react-bootstrap";
 
 function Randomizer() {
   const [randomMovie, setRandomMovie] = useState([]);
@@ -21,6 +22,7 @@ function Randomizer() {
   }, []);
 
   function selectRandomMovie() {
+
     const randomIndex = Math.floor(Math.random() * randomMovie.length);
     const selectedMovie = randomMovie[randomIndex];
     setSelectedMovie(selectedMovie);
@@ -33,16 +35,16 @@ function Randomizer() {
 
   return (
     <div>
-      <button onClick={selectRandomMovie}>Select Random Movie</button>
+      <Button onClick={selectRandomMovie}>Random Movie</Button>
 
       {/* Display the selected movie */}
-      {selectedMovie.Title && (
-        <div>
+     
+        <div className="random-movie-selected">
           <h2>Selected Movie:</h2>
           <p>Title: {selectedMovie.Title}</p>
           <img src={selectedMovie.Poster} alt={selectedMovie.Title} />
         </div>
-      )}
+      
 
     </div>
   );

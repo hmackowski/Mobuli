@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Button, Card, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import MovieProfile from "./MovieProfile";
 
 function FavoritedMovies({ faveMovies, setFaveMovies }) {
   const url = "https://64bb395a5e0670a501d6e2f1.mockapi.io/mobuli/userMovies";
-
 
   useEffect(() => {
     // This will run when the component mounts or whenever the faveMovies prop changes.
@@ -59,11 +60,13 @@ function FavoritedMovies({ faveMovies, setFaveMovies }) {
       <Container className="FaveMovie">
         {faveMovies.map((favMovie, index) => (
           <Card className="fav-card" key={index} style={{ width: "18rem" }}>
-            <Card.Img
-              src={favMovie.Poster}
-              alt={favMovie.Title}
-              style={{ height: "350px" }}
-            />
+            <Link to={`/movieProfile/${favMovie.imdbID}`} element={<MovieProfile favMovie={faveMovies}/>} >
+              <Card.Img
+                src={favMovie.Poster}
+                alt={favMovie.Title}
+                style={{ height: "350px" }}
+              />
+            </Link>
             <Card.Body>
               <Card.Title>
                 {favMovie.Title}: {favMovie.Year}

@@ -1,5 +1,4 @@
 import React from "react";
-import Logo from "../images/Mobuli-logo-large.png";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import LandingText from "./LandingText";
