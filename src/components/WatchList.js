@@ -9,7 +9,7 @@ function WatchList() {
   const [movieToSearch, setMovieToSearch] = useState("");
   const [faveMovies, setFaveMovies] = useState([]);
 
-  const searchUrl = "http://www.omdbapi.com/?s=";
+  const searchUrl = "https://www.omdbapi.com/?s=";
   const apiKey = "&type=movie&apikey=25992c34";
 
   const searchMovie = async (e) => {
