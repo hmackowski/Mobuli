@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 import MovieProfile from "./MovieProfile";
 
 function FavoritedMovies({ faveMovies, setFaveMovies }) {
+  // API URL for fetching and updating movie data
   const url = "https://64bb395a5e0670a501d6e2f1.mockapi.io/mobuli/userMovies";
 
+  // Use useEffect to fetch data when the component mounts or when faveMovies changes
   useEffect(() => {
-    // This will run when the component mounts or whenever the faveMovies prop changes.
     async function fetchData() {
       try {
         const response = await axios.get(url);
@@ -22,6 +23,7 @@ function FavoritedMovies({ faveMovies, setFaveMovies }) {
     fetchData();
   }, [setFaveMovies]);
 
+  // Function to delete a favorited movie
   async function deleteFavorited(favIndex) {
     try {
       const response = await axios.delete(`${url}/${favIndex}`);
@@ -36,6 +38,7 @@ function FavoritedMovies({ faveMovies, setFaveMovies }) {
     }
   }
 
+  // Function to toggle the "Watched" status of a movie
   async function toggleWatchedStatus(movieId) {
     try {
       // Find the movie by its ID in the state array
@@ -58,9 +61,14 @@ function FavoritedMovies({ faveMovies, setFaveMovies }) {
     <div>
       <h2>Movies to Watch</h2>
       <Container className="FaveMovie">
+        {/* Render favorited movies as cards */}
         {faveMovies.map((favMovie, index) => (
           <Card className="fav-card" key={index} style={{ width: "18rem" }}>
-            <Link to={`/movieProfile/${favMovie.imdbID}`} element={<MovieProfile favMovie={faveMovies}/>} >
+            {/* Link each movie card to its detailed profile page */}
+            <Link
+              to={`/movieProfile/${favMovie.imdbID}`}
+              element={<MovieProfile favMovie={faveMovies} />}
+            >
               <Card.Img
                 src={favMovie.Poster}
                 alt={favMovie.Title}
@@ -72,6 +80,7 @@ function FavoritedMovies({ faveMovies, setFaveMovies }) {
                 {favMovie.Title}: {favMovie.Year}
               </Card.Title>
               <Card.Text className="add-button">
+                {/* Button to toggle the "Watched" status of the movie */}
                 <Button
                   className={
                     favMovie.Watched
@@ -83,6 +92,7 @@ function FavoritedMovies({ faveMovies, setFaveMovies }) {
                 >
                   {favMovie.Watched ? "Watched" : "Watch"}
                 </Button>
+                {/* Button to remove the movie from favorites */}
                 <Button
                   variant="danger"
                   onClick={() => deleteFavorited(favMovie.id)}
@@ -98,4 +108,5 @@ function FavoritedMovies({ faveMovies, setFaveMovies }) {
   );
 }
 
+// Export the FavoritedMovies component to be used in other parts of the application
 export default FavoritedMovies;

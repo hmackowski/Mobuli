@@ -177,13 +177,23 @@ body {
 
 }
 
-.footer-container{
-  height:50px;
+.footer-container {
+  height: 50px;
   display: flex;
   justify-content: center;
 
 }
 
-.random-movie-selected{
+.random-movie-selected {
   color: white;
+}
+
+.random-button{
+  border: none !important;
+  background-color: #5f046b !important;
+}
+
+.random-button:hover{
+  border: none !important;
+  background-color: #730681 !important;
 }

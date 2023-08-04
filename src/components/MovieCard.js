@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 import MovieProfile from "./MovieProfile";
 
 function MovieCard({ movie, addMovieToFavorites }) {
+  // API URL for adding a movie to favorites
   const url = "https://64bb395a5e0670a501d6e2f1.mockapi.io/mobuli/userMovies";
 
+  // Object representing the movie to be added to favorites
   const movieToAdd = {
     Title: movie.Title,
     Poster: movie.Poster,
@@ -15,12 +17,14 @@ function MovieCard({ movie, addMovieToFavorites }) {
     imdbID: movie.imdbID,
   };
 
+  // Function to add a movie to favorites
   const addMovieToFave = async (e) => {
     e.preventDefault();
     try {
+      // Send a POST request to add the movie to favorites in the API
       let res = await axios.post(url, movieToAdd);
       console.log("Movie added successfully!", res.data);
-      addMovieToFavorites(res.data); // Call the addMovieToFavorites prop function
+      addMovieToFavorites(res.data); // Call the addMovieToFavorites prop function to update the parent component's state
     } catch (error) {
       console.error("Error adding movie:", error);
     }
@@ -29,19 +33,20 @@ function MovieCard({ movie, addMovieToFavorites }) {
   return (
     <div className="movie-card">
       <Card style={{ width: "18rem" }}>
-        <Link to={`/movieProfile/${movie.imdbID}`}
-  element={<MovieProfile />}>
-        <Card.Img
-          src={movie.Poster}
-          alt={movie.Title}
-          style={{ height: "350px" }}
-        />
+        {/* Link the movie card image to its detailed profile page */}
+        <Link to={`/movieProfile/${movie.imdbID}`} element={<MovieProfile />}>
+          <Card.Img
+            src={movie.Poster}
+            alt={movie.Title}
+            style={{ height: "350px" }}
+          />
         </Link>
         <Card.Body>
           <Card.Title>
             {movie.Title}: {movie.Year}
           </Card.Title>
           <Card.Text className="add-button">
+            {/* Button to add the movie to favorites */}
             <Button variant="success" onClick={addMovieToFave}>
               +
             </Button>
@@ -52,4 +57,5 @@ function MovieCard({ movie, addMovieToFavorites }) {
   );
 }
 
+// Export the MovieCard component to be used in other parts of the application
 export default MovieCard;
