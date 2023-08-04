@@ -6,24 +6,15 @@ import WatchList from "./components/WatchList";
 import NavbarMain from "./components/NavbarMain";
 import PageNotFound from "./components/PageNotFound";
 import Footer from "./components/Footer";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect } from "react";
 import MovieProfile from "./components/MovieProfile";
 import Randomizer from "./components/Randomizer";
 
 function App() {
-  // API URLs
-  const url = "https://64bb395a5e0670a501d6e2f1.mockapi.io/mobuli/userMovies";
-  const link =
-    "https://www.omdbapi.com/?t=Star%20Wars:%20Episode%20IV%20-%20A%20New%20Hope&type=movie&apikey=25992c34";
-
-  // State to store movie data
-  const [movieData, setMovieData] = useState([]);
-
   // Fetch movie data from the API using axios when the component mounts
   useEffect(() => {
     const getData = async () => {
-      let res = await axios.get(url);
+
       // TODO: You might want to set the retrieved data to the movieData state using setMovieData function
     };
     // Call the function to fetch data

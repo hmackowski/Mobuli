@@ -19,7 +19,7 @@ function MovieProfile() {
     }
     console.log(movieId.key)
     getMovieData();
-  }, []);
+  }, [movieId.key]);
 
   return (
     <Container style={{backgroundColor: '#2C3034'}}>
