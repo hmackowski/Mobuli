@@ -35,7 +35,7 @@ function MovieProfile() {
           {/* Display the movie details in a table */}
           <div style={{ backgroundColor: 'black', padding: '10px' }}>
             <h2 style={{color: 'white'}}>{movieInfo.Title}</h2>
-            <Table variant="dark" striped bordered hover>
+            <Table variant="dark" striped bordered>
               <tbody>
                 <tr>
                   <th>Year Released</th>

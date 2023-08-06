@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Button } from "react-bootstrap";
+import MovieProfile from "./MovieProfile";
+import { Link } from "react-router-dom";
 
 function Randomizer() {
   // State to store movie data and the selected random movie
@@ -73,7 +75,16 @@ function Randomizer() {
         {Object.keys(selectedMovie).length > 0 && (
           <>
             <p>Title: {selectedMovie.Title}</p>
-            <img src={selectedMovie.Poster} alt={selectedMovie.Title} />
+            <Link
+              to={`/movieProfile/${selectedMovie.imdbID}`}
+              element={<MovieProfile />}
+            >
+              <img
+                src={selectedMovie.Poster}
+                alt={selectedMovie.Title}
+                style={{ height: "500px" }}
+              />
+            </Link>
           </>
         )}
       </div>
