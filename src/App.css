@@ -186,9 +186,11 @@ body {
 
 .random-movie-selected {
   color: white;
+  height: 750px;
 }
 
 .random-button{
+  margin-top: 15px;
   border: none !important;
   background-color: #5f046b !important;
 }
