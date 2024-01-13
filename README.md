@@ -1,4 +1,4 @@
-# Mobuli
+# Mobuli Development Mode
 ## Movie Bucket List
 
 ![Mobuli App](https://github.com/hmackowski/FE-FinalProject/blob/main/src/images/screenshot.jpg)
