@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import MovieProfile from "./components/MovieProfile";
 import Randomizer from "./components/Randomizer";
 
+
 function App() {
   // Fetch movie data from the API using axios when the component mounts
   useEffect(() => {
@@ -39,6 +40,7 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
 
+        {/*<SideBar />*/}
         {/* Footer component */}
         <Footer />
       </div>
