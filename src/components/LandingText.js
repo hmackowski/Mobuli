@@ -2,19 +2,11 @@ import React from "react";
 import logoText from "../images/mobuli-word.png";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Login from "./Login";
-import { useState } from "react";
+
 
 // LandingText component to display the landing page text content
 function LandingText() {
-    // State to manage the visibility of the Login modal
-    const [showLogin, setShowLogin] = useState(false);
 
-    // Function to open the login modal
-    const handleShowLogin = () => setShowLogin(true);
-  
-    // Function to close the login modal
-    const handleCloseLogin = () => setShowLogin(false);
 
 
   return (
@@ -53,9 +45,7 @@ function LandingText() {
       <Link to="/watchlist">
         <Button className="get-started-button" variant="outline-secondary">Get Started</Button>
       </Link> 
-      <Button className="get-started-button" variant="secondary" onClick={handleShowLogin}>Sign In</Button>
-      {/* Render the Login component and pass the visibility state and close function */}
-      {showLogin && <Login show={showLogin} onHide={handleCloseLogin} />}
+
     </div>
   );
 }

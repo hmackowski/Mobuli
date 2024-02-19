@@ -3,6 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import MobuliWord from "../images/mobuli-word.png";
+import LoginButton from './LoginButton';
 
 function NavbarMain() {
   return (
@@ -28,6 +29,7 @@ function NavbarMain() {
             <Nav.Link className="nav-links" href="/random">Randomizer</Nav.Link>
             {/* Link to a test page that shows a 404 error */}
             <Nav.Link className="nav-links" href="/test">Test 404</Nav.Link>
+            <LoginButton />
           </Nav>
         </Navbar.Collapse>
       </Container>

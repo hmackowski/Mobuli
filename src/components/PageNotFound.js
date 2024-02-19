@@ -4,7 +4,7 @@ import "../PageNotFound.css";
 
 function PageNotFound() {
   return (
-    <>  
+    <div>  
       {/* Container for the Page Not Found content */}
       <div className="pagenotfound-content">
         {/* Image of Mobuli looking lost */}
@@ -12,7 +12,7 @@ function PageNotFound() {
       </div>
       {/* Heading indicating the page is not found */}
       <h1 style={{ color: "white" }}>404 - Page Not Found</h1>
-    </>
+    </div>
   );
 }
 
