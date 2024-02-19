@@ -4,22 +4,24 @@
 
 body {
   height: 100vh;
-  background-color: #141414 !important;
+  background-color: rgb(0, 0, 0) !important;
 }
 
 .navbar {
-  background-color: #4d0250;
+ /* background-color: #4d0250;*/
+ background-image: linear-gradient(rgb(74, 67, 75), rgb(0, 0, 0));
+ border-bottom: 1px solid rgb(90, 90, 90);
+  
 }
 
-.nav-link {
-  text-decoration: none;
-}
+
 
 .mowali-brand-logo {
   height: 50px;
 }
 
 .landing-container {
+  background-image: linear-gradient(rgb(56, 56, 56), rgb(0, 0, 0));
   background-color: #141414 !important;
   display: flex;
   align-items: center;
@@ -32,18 +34,6 @@ body {
   color: rgb(202, 202, 202);
   display: flex;
   align-items: center;
-}
-
-
-
-.nav-link:hover {
-  font-family: 'Roboto', sans-serif;
-  color: #ffffff !important;
-}
-
-.nav-link {
-  font-family: 'Roboto', sans-serif;
-  color: #b4afb3 !important;
 }
 
 .landing-paragraph {
@@ -92,18 +82,18 @@ body {
 
 .nav-links {
   display: inline-block;
-  padding: 10px 20px;
+ 
   text-decoration: none;
-  background-color: #5f046b !important;
+  border-bottom: 2px solid white;
+  /*background-color: #5f046b !important;*/
   color: #cfcfcf !important;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  margin: 5px;
+  
+  margin: 0px;
 }
 
 .nav-links:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #9108a3 !important;
+  /*background-color: #6e3475 !important;*/
+  border-bottom: 2px solid white;
 }
 
 .movie-cards {
@@ -198,4 +188,29 @@ body {
 .random-button:hover{
   border: none !important;
   background-color: #730681 !important;
+}
+
+.form-container {
+  max-width: 400px; /* Adjust this value as needed */
+  margin: 0 auto; /* Center the form */
+  padding: 15px;
+}
+
+.form-container .form-control, .form-container .btn {
+  width: 100%; /* Full width */
+}
+
+.modal-title-centered {
+  width: 100%;
+  text-align: center;
+}
+
+/* Alternatively, if you want to center the whole header including the close button */
+.modal-header {
+  display: flex;
+  justify-content: center;
+}
+
+.login-modal {
+  background-color: rgba(0, 0, 0, 0.4);
 }
