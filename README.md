@@ -20,3 +20,8 @@ Here you can find a list of changes and updates made to the project.
 - **Updated:** improved Randomizer algorithm.
 - **Removed:** N/A.
 
+#### Version [1.0.1] - [2/19/2024]
+- **Added:** Added a login Modal for future login capabilities. Improved style and feel of web app.
+- **Fixed:** N/A.
+- **Updated:** N/A.
+- **Removed:** N/A.
