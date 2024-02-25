@@ -20,7 +20,7 @@ function LandingText() {
       {/* Description of the application */}
       <p className="landing-text-description">
         Your one-stop destination for organizing and managing all your favorite
-        movies! With Mowali, you can curate your personalized movie watch list
+        movies! With Mobuli, you can curate your personalized movie watch list
         and never miss a blockbuster again. Easily search for movies, explore
         detailed information, and add them to your watch list with just a click.
         Whether you're a film enthusiast or just looking to unwind with some
