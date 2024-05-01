@@ -5,6 +5,15 @@ import Form from "react-bootstrap/Form";
 
 // Modify the Login component to accept props
 function Login({ show, onHide }) {
+
+
+
+
+
+
+
+
+
   return (
     <div className="login-modal" >
       <Modal show={show} onHide={onHide} 
@@ -25,9 +34,12 @@ function Login({ show, onHide }) {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Remember me" />
-              </Form.Group>
+              <div className="checkbox-and-link">
+                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                  <Form.Check type="checkbox" label="Remember me" />
+                </Form.Group> 
+                <p>New to Mobuli?</p><a href="/register" className="register-link">Sign up Now</a>
+              </div>
               <Button variant="primary" type="submit">
                 Submit
               </Button>

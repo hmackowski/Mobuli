@@ -28,7 +28,7 @@ function NavbarMain() {
             {/* Link to the "Randomizer" page */}
             <Nav.Link className="nav-links" href="/random">Randomizer</Nav.Link>
             {/* Link to a test page that shows a 404 error */}
-            <Nav.Link className="nav-links" href="/test">Test 404</Nav.Link>
+           {/* <Nav.Link className="nav-links" href="/test">Test 404</Nav.Link>*/}
             <LoginButton />
           </Nav>
         </Navbar.Collapse>

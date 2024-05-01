@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import { useEffect } from "react";
 import MovieProfile from "./components/MovieProfile";
 import Randomizer from "./components/Randomizer";
+import Register from "./components/Register";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/watchlist" element={<WatchList />} />
           <Route path="/movieProfile/:key" element={<MovieProfile />} />
           <Route path="/random" element={<Randomizer />} />
+          <Route path="/register" element={<Register />} />
 
           {/* If no matching route found, show PageNotFound component */}
           <Route path="*" element={<PageNotFound />} />

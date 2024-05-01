@@ -190,13 +190,15 @@ body {
 }
 
 .form-container {
-  max-width: 400px; /* Adjust this value as needed */
+  max-width: 100%; /* Adjust this value as needed */
   margin: 0 auto; /* Center the form */
   padding: 15px;
+  /* border: solid 2px red; */
 }
 
 .form-container .form-control, .form-container .btn {
-  width: 100%; /* Full width */
+  width: 80%; /* Full width */
+  
 }
 
 .modal-title-centered {
@@ -212,4 +214,63 @@ body {
 
 .login-modal {  
   backdrop-filter: blur(4px);
+}
+
+
+.checkbox-and-link {
+  display: flex;
+  justify-content: space-between;
+}
+
+.register-link {
+  margin-left: -10px; /* Adjust as needed */
+}
+
+.register-form{
+  /* border: solid 2px red; */
+  border-radius: 10px;
+  margin-top: 20px;
+  align-items: center; 
+  background-color: white;
+  padding: 15px;
+
+  width: 100%; /* Default to full width for small devices */
+
+  /* Larger than mobile devices (e.g., tablets) */
+  @media (min-width: 768px) {
+    width: 75%; /* Reduce width for medium screens */
+  }
+
+  /* Larger than tablets (e.g., desktops) */
+  @media (min-width: 992px) {
+    width: 50%; /* Further reduce width for large screens */
+  }
+
+  /* Large desktops and high-resolution displays */
+  @media (min-width: 1200px) {
+    width: 50%; /* Optionally, reduce even more for very large screens */
+  }
+}
+
+.register-form-button{
+  width:10px;
+}
+
+.center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.add-top-padding{
+  padding-top: 20px;
+}
+
+.register-label{
+  color: white;
+}
+
+.reg-error-text{
+  color: red;
 }
