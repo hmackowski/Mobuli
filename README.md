@@ -1,8 +1,8 @@
 # Mobuli Development Mode
 ## Movie Bucket List
-[Mobuli Website](https://main.dnq5sxm4edhtj.amplifyapp.com/)
-![Mobuli App](https://github.com/hmackowski/FE-FinalProject/blob/main/src/images/screenshot.jpg)
-
+[Mobuli Website](https://www.mobuli.app/)
+![Mobuli App](https://github.com/hmackowski/FE-FinalProject/blob/main/src/images/mobulipage.jpg)
+![Mobuli App](https://github.com/hmackowski/FE-FinalProject/blob/main/src/images/watchlist.jpg)
 Mobuli is a unique project designed to help movie enthusiasts create and manage their movie bucket list.
 
 ### Features
