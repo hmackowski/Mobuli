@@ -114,13 +114,13 @@ function Register() {
 
 
           <Form.Group as={Row} className="mb-3">
-            <Col sm="4">
+            <Col sm={{ span: 6, offset: 0 }}>
               <p className={errorLabel === "Passwords do not match." ? "reg-error-text" : ""}>{errorLabel}</p>
               </Col>
-              <Col sm="8">
-              <a href="/login" className="register-link">
-                Log In!
-              </a>
+              <Col sm={{ span: 3, offset: 0 }}>
+              <p className="register-link">
+                Please sign in!
+              </p>
             </Col>
           </Form.Group>
 

@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import MovieProfile from "./components/MovieProfile";
 import Randomizer from "./components/Randomizer";
 import Register from "./components/Register";
+import Login from "./components/Login";
 
 
 function App() {

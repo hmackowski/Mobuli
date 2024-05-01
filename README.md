@@ -14,10 +14,10 @@ Mobuli is a unique project designed to help movie enthusiasts create and manage 
 
 Here you can find a list of changes and updates made to the project.
 
-#### Version [1.0.0] - [6/1/2023]
-- **Added:** Randomizer: Randomizes movies in your bucket list.
+#### Version [1.0.2] - [4/30/2024]
+- **Added:** Created Register Component for allowing user registration.
 - **Fixed:** N/A.
-- **Updated:** improved Randomizer algorithm.
+- **Updated:** N/A.
 - **Removed:** N/A.
 
 #### Version [1.0.1] - [2/19/2024]
@@ -25,3 +25,11 @@ Here you can find a list of changes and updates made to the project.
 - **Fixed:** N/A.
 - **Updated:** N/A.
 - **Removed:** N/A.
+
+#### Version [1.0.0] - [6/1/2023]
+- **Added:** Randomizer: Randomizes movies in your bucket list.
+- **Fixed:** N/A.
+- **Updated:** improved Randomizer algorithm.
+- **Removed:** N/A.
+
+
