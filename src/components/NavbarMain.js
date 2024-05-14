@@ -1,19 +1,24 @@
-import React from 'react';
-import Navbar from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
 import MobuliWord from "../images/mobuli-word.png";
-import LoginButton from './LoginButton';
-import { getLoggedInUser, isUserLoggedIn, logOut } from '../service/AuthService';
-import { NavLink } from 'react-bootstrap';
+import LoginButton from "./LoginButton";
+import { isUserLoggedIn, logOut} from "../service/AuthService";
+import { NavLink } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
-function NavbarMain() {
+function NavbarMain({ userID }) {
 
-const isAuth = isUserLoggedIn();
+  const isAuth = isUserLoggedIn();
 
-function handleLogout(){
-  logOut();
-}
+  const navigator = useNavigate();
+
+  function handleLogout() {
+    logOut();
+    navigator("/");
+  }
+
+
 
   return (
     // Customized Bootstrap Navbar
@@ -21,7 +26,7 @@ function handleLogout(){
       <Container>
         {/* Brand logo with a link to the home page */}
         <Navbar.Brand href="/">
-          <img src={MobuliWord} alt="Mowali" className='mowali-brand-logo' />
+          <img src={MobuliWord} alt="Mowali" className="mowali-brand-logo" />
         </Navbar.Brand>
         {/* Hamburger icon for toggling the navbar on smaller screens */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -33,25 +38,28 @@ function handleLogout(){
           {/* Links on the right side of the navbar */}
           <Nav className="text-color ms-auto">
             {/* Link to the "Watch List" page */}
-            <Nav.Link className="nav-links" href="/watchlist">Watch List</Nav.Link>
+            <Nav.Link className="nav-links" href="/watchlist">
+              Watch List
+            </Nav.Link>
             {/* Link to the "Randomizer" page */}
-            <Nav.Link className="nav-links" href="/random">Randomizer</Nav.Link>
+            <Nav.Link className="nav-links" href="/random">
+              Randomizer
+            </Nav.Link>
             {/* Link to a test page that shows a 404 error */}
-           {/* <Nav.Link className="nav-links" href="/test">Test 404</Nav.Link>*/}
-            {
-             !isAuth &&
-             <LoginButton />
-            }
-<p className='logged-in-user'>
-            {
-              isAuth &&
-              getLoggedInUser()            
-            }
-</p>
-            {
-              isAuth &&
-              <NavLink to="" className='log-out-link' onClick={handleLogout}>Log out</NavLink>
-            }
+            {/* <Nav.Link className="nav-links" href="/test">Test 404</Nav.Link>*/}
+
+            {!isAuth && <LoginButton />}
+
+            <p className="logged-in-user">
+              {isAuth && "Welcome, " + userID}
+              {/* {userID} */}
+            </p>
+
+            {isAuth && (
+              <NavLink to="" className="log-out-link" onClick={handleLogout}>
+                Log out
+              </NavLink>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

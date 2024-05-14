@@ -27,5 +27,16 @@ export const getLoggedInUser = () => {
 export const logOut = () => {
   localStorage.clear();
   sessionStorage.clear();
-  window.location.reload(false);
 }
+
+export async function getUserID(emailAddress) {
+  return axios.get(AUTH_REST_API_BASE_URL + "/getUserID?emailAddress=" + emailAddress)
+    .then(response => {
+      return response.data.firstName;
+    })
+    .catch(error => {
+      console.error('Error fetching user ID:', error);
+      throw error;
+    });
+}
+
