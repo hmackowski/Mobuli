@@ -274,3 +274,12 @@ body {
 .reg-error-text{
   color: red;
 }
+
+.logged-in-user{
+  color: #ca2a47;
+  padding: 8px;
+}
+
+.log-out-link{
+  color:#f57f0a!important;
+}

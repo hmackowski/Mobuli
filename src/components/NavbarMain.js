@@ -4,8 +4,17 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import MobuliWord from "../images/mobuli-word.png";
 import LoginButton from './LoginButton';
+import { getLoggedInUser, isUserLoggedIn, logOut } from '../service/AuthService';
+import { NavLink } from 'react-bootstrap';
 
 function NavbarMain() {
+
+const isAuth = isUserLoggedIn();
+
+function handleLogout(){
+  logOut();
+}
+
   return (
     // Customized Bootstrap Navbar
     <Navbar expand="lg" className="custom-navbar">
@@ -29,7 +38,20 @@ function NavbarMain() {
             <Nav.Link className="nav-links" href="/random">Randomizer</Nav.Link>
             {/* Link to a test page that shows a 404 error */}
            {/* <Nav.Link className="nav-links" href="/test">Test 404</Nav.Link>*/}
-            <LoginButton />
+            {
+             !isAuth &&
+             <LoginButton />
+            }
+<p className='logged-in-user'>
+            {
+              isAuth &&
+              getLoggedInUser()            
+            }
+</p>
+            {
+              isAuth &&
+              <NavLink to="" className='log-out-link' onClick={handleLogout}>Log out</NavLink>
+            }
           </Nav>
         </Navbar.Collapse>
       </Container>
