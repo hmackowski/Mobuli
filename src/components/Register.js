@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import { registerAPICall } from "../service/AuthService";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [firstName, setFirstName] = useState("");
@@ -10,6 +11,8 @@ function Register() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorLabel, setErrorLabel] = useState("Already Registered?");
+
+  const navigator = useNavigate();
 
   function handleRegistrationForm(e) {
     e.preventDefault();
@@ -26,6 +29,7 @@ function Register() {
       }).catch(error => {
         console.error(error);
       })
+      navigator("/");
 
     } else {
       setErrorLabel("Passwords do not match.");

@@ -3,13 +3,15 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import MobuliWord from "../images/mobuli-word.png";
 import LoginButton from "./LoginButton";
-import { isUserLoggedIn, logOut} from "../service/AuthService";
+import { getLoggedInUserName, isUserLoggedIn, logOut} from "../service/AuthService";
 import { NavLink } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-function NavbarMain({ userID }) {
+function NavbarMain() {
 
   const isAuth = isUserLoggedIn();
+  const [userID, setUserID] = useState("");
 
   const navigator = useNavigate();
 
@@ -17,6 +19,23 @@ function NavbarMain({ userID }) {
     logOut();
     navigator("/");
   }
+  
+
+function handleUserName(){
+  setUserID(getLoggedInUserName())  
+  return userID;
+}
+
+useEffect(() => {
+  if (isAuth && userID === "") {
+    setUserID(getLoggedInUserName());
+  }
+
+  // Optional: Return a cleanup function if needed
+  return () => {
+    // Cleanup logic here
+  };
+}, [isAuth]); // Add dependencies if necessary
 
 
 

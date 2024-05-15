@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import { loginAPICall, saveLoggedInUser, storeToken } from "../service/AuthService";
+import { loginAPICall, saveLoggedInUser, saveUserInfo, storeToken } from "../service/AuthService";
 import { useNavigate } from "react-router-dom";
 
 // Modify the Login component to accept props
@@ -16,7 +16,7 @@ const navigator = useNavigate();
 async function handleLoginForm(e){
   e.preventDefault();
   const loginObj = {emailAddress, password};
-  console.log(loginObj)
+  
 
   await loginAPICall(emailAddress, password).then((response) =>{
     console.log(response.data);
@@ -26,10 +26,11 @@ async function handleLoginForm(e){
       const token = 'Basic ' + window.btoa(emailAddress + ":" + password);
       storeToken(token);
       saveLoggedInUser(emailAddress);
+      saveUserInfo(emailAddress, () => {
+        navigator("/watchlist"); // Navigate only after the callback is called
+      });
 
-      navigator("/watchlist");
-
-      window.location.reload(false);
+      //window.location.reload(false);
     } else {
       // Handle incorrect credentials here, if needed
       // Maybe display an error message to the user

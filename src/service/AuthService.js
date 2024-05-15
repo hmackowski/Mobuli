@@ -24,6 +24,11 @@ export const getLoggedInUser = () => {
   return emailAddress;
 }
 
+export const getLoggedInUserName = () => {
+  let firstName = sessionStorage.getItem("firstName");
+  return firstName;
+}
+
 export const logOut = () => {
   localStorage.clear();
   sessionStorage.clear();
@@ -37,6 +42,21 @@ export async function getUserID(emailAddress) {
     .catch(error => {
       console.error('Error fetching user ID:', error);
       throw error;
+    });
+}
+
+export function saveUserInfo(emailAddress, callback){
+  axios.get(AUTH_REST_API_BASE_URL + "/getUserID?emailAddress=" + emailAddress)
+    .then(response => {
+      const userInfo = response.data;
+      sessionStorage.setItem("userID", userInfo.id);
+      sessionStorage.setItem("firstName", userInfo.firstName);
+      if (callback) {
+        callback();
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching user info:', error);
     });
 }
 
