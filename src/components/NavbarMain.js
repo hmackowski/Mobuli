@@ -20,12 +20,6 @@ function NavbarMain() {
     navigator("/");
   }
   
-
-function handleUserName(){
-  setUserID(getLoggedInUserName())  
-  return userID;
-}
-
 useEffect(() => {
   if (isAuth && userID === "") {
     setUserID(getLoggedInUserName());
@@ -35,7 +29,7 @@ useEffect(() => {
   return () => {
     // Cleanup logic here
   };
-}, [isAuth]); // Add dependencies if necessary
+}, [isAuth, userID]); // Add dependencies if necessary
 
 
 
