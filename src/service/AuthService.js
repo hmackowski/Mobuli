@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const AUTH_REST_API_BASE_URL = "https://18.218.204.131:8080/api/auth";
+const AUTH_REST_API_BASE_URL = "http://18.218.204.131:8080/api/auth";
 
 export const registerAPICall = (registerObj) => axios.post(AUTH_REST_API_BASE_URL + "/register", registerObj);
 
