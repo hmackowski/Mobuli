@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getToken } from "./AuthService";
 
-const AUTH_REST_API_BASE_URL = "http://localhost:8080/api/movie";
+const AUTH_REST_API_BASE_URL = "https://backend.mobuli.app/api/movie";
 
 export const getList = () => axios.get(AUTH_REST_API_BASE_URL + "/list");
 
